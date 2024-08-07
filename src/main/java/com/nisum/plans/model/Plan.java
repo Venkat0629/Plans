@@ -1,23 +1,20 @@
 package com.nisum.plans.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
 @Data
-//@AllArgsConstructor
-//@NoArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "plans", schema = "nisum")
 public class Plan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long planId;
     private String code;
-    private String caption;
-    private String planPrice;
-    private String monthlyCost;
-    private Integer trialDuration;
-    private Boolean isDiscountedPrice;
+    private String planType;
+    private Double price;
+    private Integer duration;
+    private Boolean discount;
 }
